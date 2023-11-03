@@ -1,0 +1,15 @@
+FUNCTION IsPalindrome(word: STRING) : BOOLEAN
+VAR
+  isPalindrome: BOOLEAN;
+BEGIN
+  IF (Length(word) <= 1) THEN
+    isPalindrome := True;
+  ELSE
+    IF word[1] = word[Length(word)] THEN
+      isPalindrome := isPalindrome(Copy(word, 2, Length(word) - 2));
+    ELSE
+      isPalindrome := False;
+    END_IF;
+  END_IF;
+  RETURN isPalindrome;
+END;
